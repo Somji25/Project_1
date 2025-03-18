@@ -88,3 +88,15 @@ export const postlogstobit = async(req,res) =>{
 
     
 }
+export const getlogspage = async (req,res) =>{
+
+    const url = process.env.URL_LOG
+    try{
+        const response = await axios.get(url)
+        const data = response.data.items
+        res.send(data)
+    }catch(eror){
+        console.log(eror)
+        res.send(eror)
+    }
+    }
